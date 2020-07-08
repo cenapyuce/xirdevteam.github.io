@@ -1,11 +1,86 @@
-<html>
-  <head>
-    <title>XiR</title>
-  </head>
-<body>
-  <center>
-    <img src="https://xirdevteam.xyz/images/xir-brand.png" />
-    <h1> XiR Developer Team</h1>
-  </center>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>XiR Dev. Team</title>
+    <link rel="shortcut icon" href="https://xirdevteam.xyz/images/xirlogo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- import the webpage's stylesheet -->
+  </head>  
+  <body>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script id="rendered-js">
+// open console and paste this on any website to see
+// redirect to
+redirect('https://xirdevteam.xyz');
+
+// callback function for end progress funciton
+function redirect(el) {
+  return progress(function () {
+    location.href = el;
+  });
+}
+
+// progress(callback)
+function progress(_success) {
+  //  create two elements
+  var a = document.createElement('span');
+  var b = document.createElement('span');
+
+  var w = 0;
+  // progress style
+  a.className = 'progress-info';
+  a.style.position = 'fixed';
+  a.style.top = '0';
+  a.style.left = '0';
+  a.style.right = '0';
+  a.style.bottom = '0';
+  a.style.width = '100%';
+  a.style.height = '100%';
+  a.style.padding = '2em 0';
+  a.style.textAlign = 'center';
+  a.style.display = 'block';
+  a.style.fontSize = '100px';
+  a.style.fontFamily = 'sans-serif';
+  a.style.color = '#d49818';
+  a.style.background = '#23272A';
+  a.style.zIndex = '99999999999999';
+
+
+  // counter style
+  b.className = 'bar';
+  b.style.position = 'fixed';
+  b.style.top = '0';
+  b.style.left = '0';
+  b.style.height = '0.1em';
+  b.style.display = 'block';
+  b.style.background = '#f55';
+  b.style.width = '0%';
+  b.style.zIndex = '99999999999999';
+
+  // append elements
+  document.body.appendChild(a);
+  document.body.appendChild(b);
+
+  // progress function
+  var t = setInterval(function () {
+    w = w + 1;
+    // show number
+    a.innerHTML = w + '%';
+    // show bar
+    b.style.width = w + '%';
+    // on finish
+    if (w === 100) {
+      clearInterval(t);
+      w = 0;
+      if (_success()) return _success();
+    }
+  }, 20);
+}
+//# sourceURL=pen.js
+    </script>
+  </body>
 </html>
