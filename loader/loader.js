@@ -1,7 +1,7 @@
 var sayfa;
 
-function Yukleme() {
-  sayfa = setTimeout(showPage, 800); /* Yüklenme hızını buradan ayarlayabilirsiniz. */
+function Yukleme(hiz) {
+  sayfa = setTimeout(showPage, hiz); /* Yüklenme hızını buradan ayarlayabilirsiniz. */
 }
 
 function showPage() {
